@@ -32,9 +32,9 @@ public class ImcController {
     public Person calculateImc(@RequestBody Person person) {
         person.imc = person.weight / Math.pow(person.height, 2);
         if (person.imc < 18.5) person.imcDescription = "Magreza";
-        if (person.imc < 24.9) person.imcDescription = "Normal";
-        if (person.imc <= 30.0) person.imcDescription = "Sobrepeso";
-        if (person.imc > 30.0) person.imcDescription = "Obesidade";
+        else if (person.imc < 24.9) person.imcDescription = "Normal";
+        else if (person.imc <= 30.0) person.imcDescription = "Sobrepeso";
+        else if (person.imc > 30.0) person.imcDescription = "Obesidade";
         
         return person;
     }
