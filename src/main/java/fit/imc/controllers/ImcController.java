@@ -13,7 +13,12 @@ import org.springframework.web.bind.annotation.RestController;
 import fit.imc.view.Person;
 
 @RestController
-@CrossOrigin(origins = "http://127.0.0.1:8000")
+@CrossOrigin(origins = {
+    "http://localhost:8000", 
+    "http://127.0.0.1:8000",
+    "http://localhost:3000", 
+    "http://127.0.0.1:3000"
+})
 @RequestMapping("/imc")
 public class ImcController {
     @GetMapping("/table")
